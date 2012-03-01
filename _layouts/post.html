@@ -1,5 +1,16 @@
 ---
 layout: default
+title: Post Template
 ---
-{% include JB/setup %}
-{% include themes/twitter/post.html %}
+<p class="post-title">
+	<h2>{{ post.title }}</h2>
+</p>
+
+<p class="post-date">
+	FOOBAR!! {{ post.date | date: "%B %e, %Y" }}
+</p>
+
+<p class="post-body">
+	{{ content }}
+</p>
+
