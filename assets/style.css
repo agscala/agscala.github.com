@@ -86,8 +86,12 @@ body {
 	width: 100%;
 	padding: 10px;
 	margin-bottom: 10px;
-
-	font-family: monospace;
 	font-size: 12px;
+	background: #FDFDFD;
+}
+
+code {
+	font-family: monospace;
+	font-size: 14px;
 }
 
