@@ -4,6 +4,20 @@
 
 #logo {
 	font-size: 42px;
+	font-weight: bold;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#post-title {
+	font-weight: bold;
+	margin-bottom: 1px;
+	font-size: 28px;
+}
+
+#post-date {
+	font-size: 10px;
+	margin-bottom: 20px;
 }
 
 h1, h2, h3 {
@@ -24,8 +38,8 @@ h3 { font-size: 18px; }
 	color: #444;
 }
 
-#content p {
-	margin-bottom: 1em;
+#post-body p {
+	margin-bottom: 10px;
 	line-height: 1.3em;
 	word-spacing: 0.3em;
 }
