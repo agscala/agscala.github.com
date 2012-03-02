@@ -67,15 +67,21 @@ body {
 	width: 480px;
 	margin: 10px auto;
 
-	font-family: 'Merriweather', serif;
 	font-size: 16px;
+	font-family: Georgia, serif;
+
+	font-style: normal;
+	font-weight: normal;
+	text-transform: normal;
+	letter-spacing: normal;
+
 
 	color: #444;
 }
 
 #post-body p {
 	margin-bottom: 10px;
-	line-height: 1.3em;
+	line-height: 1.45em;
 	word-spacing: 0.3em;
 }
 
