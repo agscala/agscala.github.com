@@ -2,7 +2,11 @@
 <html>
 <head>
 	<meta charset="utf8">
+	{% if page.title %}
 	<title>{{ page.title }}</title>
+	{% else %}
+	<title>Andrew Scala</title>
+	{% endif %}
 	<link href='http://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="/assets/reset.css" />
 	<link rel="stylesheet" type="text/css" href="/assets/style.css" />

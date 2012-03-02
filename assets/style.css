@@ -11,7 +11,7 @@
 #logo-link:hover { color: black; }
 
 header {
-	margin-top: 20px;
+	margin-top: 30px;
 	margin-bottom: 20px;
 }
 
@@ -80,9 +80,8 @@ body {
 }
 
 .highlight {
-	background: #FAFAFA;
-	border-top: 1px solid black;
-	border-bottom: 1px solid black;
+	background: #FDFDFD;
+	border: 1px solid #E9E9E9;
 
 	width: 100%;
 	padding: 10px;
