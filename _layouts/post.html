@@ -3,13 +3,15 @@ layout: default
 title: Post Template
 ---
 
-<h2 id="post-title">
-	{{ page.title }}
-</h2>
+<div id="post-header">
+	<h2 id="post-title">
+		{{ page.title }}
+	</h2>
 
-<p id="post-date">
-	{{ page.date | date: "%B %e, %Y" }}
-</p>
+	<p id="post-date">
+		{{ page.date | date: "%B %e, %Y" }}
+	</p>
+</div>
 
 <div id="post-body">
 	{{ content }}
