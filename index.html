@@ -9,11 +9,11 @@ layout: default
 
 {% for post in site.posts %}
 
-<p class="archive-record">
+<div class="archive-record">
 	<p class="archive-date">
 		{{ post.date | date: "%B %e, %Y" }}
 	</p>
 	<a class="archive-url" href="{{ post.url }}">{{ post.title }}</a>
-</p>
+</div>
 
 {% endfor %}
