@@ -54,9 +54,14 @@ header {
 	font-size: 10px;
 }
 
+#post-body {
+	margin-bottom: 40px;
+}
+
 #post-body h1,
 #post-body h2,
 #post-body h3 {
+	padding-top: 10px;
 	margin-bottom: 10px;
 }
 
