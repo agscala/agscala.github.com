@@ -107,3 +107,13 @@ code {
 	font-size: 14px;
 }
 
+p code {
+	padding: .1em .3em;
+	background-color: #EEE;
+	font-weight: bold;
+}
+
+p em, p b {
+	font-weight: bold;
+}
+
