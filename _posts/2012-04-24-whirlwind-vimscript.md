@@ -214,9 +214,9 @@ endfunction
 
 There's a special way to call functions, and that is on a range of lines from a buffer.
 Calling a function this way looks like `1,3call Foobar()`.
-A function called with a range is executed once for every line in the range. In this case, `foobar` is called three times total.
+A function called with a range is executed once for every line in the range. In this case, `Foobar` is called three times total.
 
-If you add the keyword `range` after the argument list, the function will only be defined once.
+If you add the keyword `range` after the argument list, the function will only be called once.
 Two special variables will be available within the scope of the function: `a:firstline` and `a:lastline`.
 These variables contain the start and end line numbers for the range on the function call.
 
