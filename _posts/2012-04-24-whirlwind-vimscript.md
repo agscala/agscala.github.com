@@ -129,9 +129,6 @@ Add `?` or `#` to the end of the operator to match based on a case or not.*
 
 `<string> . <string>`: Concatinate two strings.
 
-`&<option>`: Get the value of a "set" style option.
-
-`$<variable>`: Get the value of a system variable.
 
 {% highlight vim %}
 >>> if "X start" =~ 'X$'
@@ -231,3 +228,8 @@ function! b:RangeSize() range
 endfunction
 {% endhighlight %}
 
+## Other Stuff
+
+`&<option>`: Get the value of a "set" style option.
+
+`$<variable>`: Get the value of a system variable.
