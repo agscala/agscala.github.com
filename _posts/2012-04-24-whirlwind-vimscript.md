@@ -113,7 +113,7 @@ false
 
 `<string> == <string>`: String equals.
 
-`<string> != <string>`: String equals.
+`<string> != <string>`: String does not equal.
 
 `<string> =~ <pattern>`: String matches pattern.
 
@@ -127,7 +127,7 @@ false
 Add `?` or `#` to the end of the operator to match based on a case or not.*
 
 
-`<string> . <string>`: Concatinate two strings.
+`<string> . <string>`: Concatenate two strings.
 
 
 {% highlight vim %}
