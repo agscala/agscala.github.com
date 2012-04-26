@@ -8,7 +8,7 @@ published: true
 
 This article is intended so that you can learn the basics of vimscript as quickly as possible.
 You might even be able to consider this to be a cheat sheet.
-Nearly all of the following information can be found in vim's internal documentation.
+Nearly all of the following information can be found in [Vim's internal documentation](http://vimdoc.sourceforge.net/htmldoc/usr_41.html).
 
 You should probably already know how to program before reading this.
 
