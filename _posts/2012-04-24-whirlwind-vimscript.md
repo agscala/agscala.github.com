@@ -141,9 +141,9 @@ false
 ## If, For, While, and Try/Catch
 
 {% highlight vim %}
-if <expr>
+if <expression>
 	...
-elseif <expr>
+elseif <expression>
 	...
 else
 	...
@@ -151,7 +151,7 @@ endif
 {% endhighlight %}
 
 {% highlight vim %}
-while <expr>
+while <expression>
 endwhile
 {% endhighlight %}
 
@@ -176,3 +176,54 @@ finally
 	...
 endtry
 {% endhighlight %}
+
+## Functions
+
+Define a function with the `function` keyword.
+If you want to overwrite a function, use `function!` instead.
+Functions can be defined in a specific scope, just like variables.
+
+***Note:***
+*Functions names must start with a capital letter.*
+
+{% highlight vim %}
+function! <Name>(arg1, arg2, etc)
+	<function body>
+endfunction
+{% endhighlight %}
+
+`delfunction <function>` deletes a function.
+
+`call <function>` executes a function and is required *unless the call is part of an expression.*
+
+**Example:** Create global function `Foobar` forcefully (with !).
+including `...` as the last arg creates variable length arg list.
+To fetch the first value from `...`, use `a:1`.
+To get the second value, use `a:2` and so on.
+`a:0` is special and contains the number of arguments held in `...`.
+
+{% highlight vim %}
+function! g:Foobar(arg1, arg2, ...)
+	let first_argument = a:arg1
+	let index = 1
+	let variable_arg_1 = a:{index} " same as a:1
+	return variable_arg_1
+endfunction
+{% endhighlight %}
+
+There's a special way to call functions, and that is on a range of lines from a buffer.
+Calling a function this way looks like `1,3call Foobar()`.
+A function called with a range is executed once for every line in the range. In this case, `foobar` is called three times total.
+
+If you add the keyword `range` after the argument list, the function will only be defined once.
+Two special variables will be available within the scope of the function: `a:firstline` and `a:lastline`.
+These variables contain the start and end line numbers for the range on the function call.
+
+**Example:** Create buffer function `RangeSize` forcefully which will print out the size of the range it is called with.
+
+{% highlight vim %}
+function! b:RangeSize() range
+    echo a:lastline - a:firstline
+endfunction
+{% endhighlight %}
+
