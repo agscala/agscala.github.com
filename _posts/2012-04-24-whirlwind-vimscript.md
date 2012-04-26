@@ -25,14 +25,17 @@ Vimscript does use `<` and `>` as comparison operators.*
 
 `unlet!` unsets a variable and surpresses the error if it doesn't exist.
 
-{% highlight vim %}
-" Variable scoping:
+By default, a variable is scoped globally if it is initially defined outside a function or it is local to the function it was initialized in in.
+You can explicitly scope variables by prepending a specific prefix to their name:
 
-b:var - buffer.
-w:var - window.
+{% highlight vim %}
 g:var - global.
-a:var - function argument variable.
-v:var - Predefined Vim variable.
+a:var - function argument.
+l:var - local to function.
+b:var - local to buffer.
+w:var - local to window.
+t:var - local to tab.
+v:var - Predefined by Vim.
 {% endhighlight %}
 
 ## Data Types
