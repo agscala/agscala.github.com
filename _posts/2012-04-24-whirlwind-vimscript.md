@@ -3,7 +3,7 @@ layout: post
 title: Whirlwind Vimscript
 category:
 tags: []
-published: false
+published: true
 ---
 
 This article is intended so that you can learn the basics of vimscript as quickly as possible.
@@ -12,12 +12,10 @@ Nearly all of the following information can be found in vim's internal documenta
 
 You should probably already know how to program before reading this.
 
-*
-Note:
+*Note:
 Examples may contain tokens resembling `<token>`.
 These are meant to be replaced completely, including the `<` and the `>`.
-Vimscript does use `<` and `>` as comparison operators.
-*
+Vimscript does use `<` and `>` as comparison operators.*
 
 ## Variables
 
@@ -86,8 +84,6 @@ Most strings will covert to 0, unless the string starts with a number.
 {'blue': "#0000ff", 'red': "#ff0000"}
 {% endhighlight %}
 
-* * *
-
 Vimscript is **dynamically** and **weakly** typed.
 
 {% highlight vim %}
@@ -96,8 +92,9 @@ Vimscript is **dynamically** and **weakly** typed.
 >>> 1 + "1"
 2
 
-" Note: Complete vim expressions aren't included for berevity's sake.
-" true indicates the if condition passes, false means it fails.
+" Note: Complete vim expressions aren't included for
+" berevity's sake. true indicates the if condition
+" passes, false means it fails.
 >>> if "foobar"
 false
 >>> if "1000"
@@ -122,11 +119,24 @@ false
 
 `<operator>?`: Additionally don't match case.
 
+*Note: Vim option `ignorecase` sets default case sensitivity for `==` and `!=` operators.
+Add `?` or `#` to the end of the operator to match based on a case or not.*
+
+
 `<string> . <string>`: Concatinate two strings.
 
 `&<option>`: Get the value of a "set" style option.
 
 `$<variable>`: Get the value of a system variable.
+
+{% highlight vim %}
+>>> if "X start" =~ 'X$'
+false
+>>> if "end X" =~ 'X$'
+true
+>>> if "end x" =~# 'X$'
+false
+{% endhighlight %}
 
 ## If, For, While, and Try/Catch
 
