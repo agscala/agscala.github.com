@@ -113,7 +113,16 @@ p code {
 	font-weight: bold;
 }
 
-p em, p b {
+p strong, p b {
 	font-weight: bold;
+}
+
+p em, p i {
+	font-style: italic;
+}
+
+hr {
+	height: 30px;
+	border: none !important;
 }
 
