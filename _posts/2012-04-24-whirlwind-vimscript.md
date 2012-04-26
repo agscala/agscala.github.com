@@ -12,17 +12,19 @@ Nearly all of the following information can be found in vim's internal documenta
 
 You should probably already know how to program before reading this.
 
-*Note:*
+*
+Note:
 Examples may contain tokens resembling `<token>`.
 These are meant to be replaced completely, including the `<` and the `>`.
 Vimscript does use `<` and `>` as comparison operators.
+*
 
 ## Variables
 
-Vimscript is both *dynamically* and *weakly* typed.
-
 `let` is used to set a variable.
+
 `unlet` is used to unset a variable.
+
 `unlet!` unsets a variable and surpresses the error if it doesn't exist.
 
 {% highlight vim %}
@@ -33,20 +35,98 @@ w:var - window.
 g:var - global.
 a:var - function argument variable.
 v:var - Predefined Vim variable.
-
-&<option> gives the value of a "set" style option.
-$<variable> gives the value of a system variable.
 {% endhighlight %}
 
-## Comparisons
-Numeric Comparisons:
-	==, !=, >, >=, <, <=
-String Comparison:
-	<operator># Match case.
-	<operator>? Don't match case.
-	<string> =~ <pattern> String matches
-	<string> !~ <pattern> String doesn't match
-	<string> . <string> Concatinate
+## Data Types
+
+`Number`: 32-bit signed number.
+
+{% highlight vim %}
+-123
+0x10
+0177
+{% endhighlight %}
+
+`Float`: Floating point number.
+
+{% highlight vim %}
+123.456
+1.15e-6
+-1.1e3
+{% endhighlight %}
+
+`String`: NUL terminated string of 8-bit unsigned characters.
+
+{% highlight vim %}
+"ab\txx\"--"
+'x-z''a,c'
+{% endhighlight %}
+
+`Funcref`: A reference to a function.
+
+{% highlight vim %}
+function("strlen")
+{% endhighlight %}
+
+`List`: An ordered sequence of items.
+
+{% highlight vim %}
+[1, 2, ['a', 'b']]
+{% endhighlight %}
+
+There is no `Boolean` type.
+Numeric value 0 is treated as *false*, while anything else is *true*.
+
+Strings are converted to integers before checking truthiness.
+Most strings will covert to 0, unless the string starts with a number.
+
+`Dictionary`: An associative, unordered array. Each entry has a key and a value.
+
+{% highlight vim %}
+{'blue': "#0000ff", 'red': "#ff0000"}
+{% endhighlight %}
+
+* * *
+
+Vimscript is **dynamically** and **weakly** typed.
+
+{% highlight vim %}
+>>> 1 . "foo"
+1foo
+>>> 1 + "1"
+2
+
+" Note: Complete vim expressions aren't included for berevity's sake.
+" true indicates the if condition passes, false means it fails.
+>>> if "foobar"
+false
+>>> if "1000"
+true
+>>> if "x1000"
+false
+>>> if "0"
+false
+{% endhighlight %}
+
+## String Conditionals and Operators:
+
+`<string> == <string>`: String equals.
+
+`<string> != <string>`: String equals.
+
+`<string> =~ <pattern>`: String matches pattern.
+
+`<string> !~ <pattern>`: String doesn't match pattern.
+
+`<operator>#`: Additionally match case.
+
+`<operator>?`: Additionally don't match case.
+
+`<string> . <string>`: Concatinate two strings.
+
+`&<option>`: Get the value of a "set" style option.
+
+`$<variable>`: Get the value of a system variable.
 
 ## If, For, While, and Try/Catch
 
