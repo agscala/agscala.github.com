@@ -48,7 +48,7 @@ v:var - Predefined by Vim.
 0177
 {% endhighlight %}
 
-`Float`: Floating point number.
+`Float`: Floating point number. *Requires `+float` on vim compile*
 
 {% highlight vim %}
 123.456
@@ -76,7 +76,7 @@ function("strlen")
 {% endhighlight %}
 
 There is no `Boolean` type.
-Numeric value 0 is treated as *false*, while anything else is *true*.
+Numeric value 0 is treated as *falsy*, while anything else is *truthy*.
 
 Strings are converted to integers before checking truthiness.
 Most strings will covert to 0, unless the string starts with a number.
@@ -84,7 +84,7 @@ Most strings will covert to 0, unless the string starts with a number.
 `Dictionary`: An associative, unordered array. Each entry has a key and a value.
 
 {% highlight vim %}
-{'blue': "#0000ff", 'red': "#ff0000"}
+{'blue': "#0000ff", 'red': "#ff0000", "foo": 2}
 {% endhighlight %}
 
 Vimscript is **dynamically** and **weakly** typed.
@@ -95,15 +95,16 @@ Vimscript is **dynamically** and **weakly** typed.
 >>> 1 + "1"
 2
 
-" Note: Complete vim expressions aren't included for
-" berevity's sake. true indicates the if condition
-" passes, false means it fails.
+" Note: true indicates the if condition passes, 
+"       false means it fails.
 >>> if "foobar"
 false
 >>> if "1000"
 true
 >>> if "x1000"
 false
+>>> if "1000x"
+true
 >>> if "0"
 false
 {% endhighlight %}
