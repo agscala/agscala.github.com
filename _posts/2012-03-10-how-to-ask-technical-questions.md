@@ -3,7 +3,7 @@ layout: post
 title: How To Ask Technical Questions.
 category:
 tags: []
-published: true
+published: false
 ---
 
 Anyone who tries to do something new and doesn't run into issues is some sort of genius or is
