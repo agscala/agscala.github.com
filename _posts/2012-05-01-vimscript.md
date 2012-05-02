@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 5 Minute Vimscript
+title: Five Minute Vimscript
 category:
 tags: []
 published: true
@@ -8,7 +8,6 @@ published: true
 
 This article is intended so that you can learn the basics of vimscript as quickly as possible.
 You might even be able to consider this to be a cheat sheet.
-Nearly all of the following information can be found in [Vim's internal documentation](http://vimdoc.sourceforge.net/htmldoc/usr_41.html).
 
 You should probably already know how to program before reading this.
 
@@ -286,4 +285,27 @@ Foo
 :call myinstance.printFoo()
 Bar
 {% endhighlight %}
+
+## Keep Going
+
+Now that you know what you're getting yourself into, there are some good resources for learning more:
+
+**Tutorials:**
+
+[Vim's internal documentation](http://vimdoc.sourceforge.net/htmldoc/usr_41.html)
+
+[IBM's "Scripting the Vim Editor"](http://www.ibm.com/developerworks/linux/library/l-vim-script-1/index.html)
+
+**Other people's code:**
+
+[Github: tpope](https://github.com/tpope)
+
+[Github: scrooloose](https://github.com/scrooloose)
+
+## Thanks
+
+Hope you found this useful.
+Thanks for reading.
+
+*If you have any suggestions or corrections, be sure to give me a shout!*
 

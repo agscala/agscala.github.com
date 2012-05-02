@@ -15,10 +15,6 @@ header {
 	margin-bottom: 20px;
 }
 
-#archive-link {
-	font-size: 10px;
-}
-
 #post-header {
 	margin-bottom: 20px;
 }
@@ -55,7 +51,7 @@ header {
 }
 
 #post-body {
-	margin-bottom: 40px;
+	margin-bottom: 10px;
 }
 
 #post-body h1,
@@ -113,6 +109,7 @@ p code {
 	font-weight: bold;
 }
 
+footer strong, footer b,
 p strong, p b {
 	font-weight: bold;
 }
@@ -126,6 +123,7 @@ hr {
 	border: none !important;
 }
 
+footer a,
 p a {
 	color: #888;
 
@@ -134,3 +132,14 @@ p a {
 	margin-right: .1em;
 }
 
+footer a:hover,
+p a:hover {
+	color: black;
+}
+
+footer {
+	line-height: 1.45em;
+
+	margin-top: 0px;
+	margin-bottom: 20px;
+}
