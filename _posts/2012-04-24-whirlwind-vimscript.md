@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Whirlwind Vimscript
+title: 5 Minute Vimscript
 category:
 tags: []
 published: true
@@ -11,6 +11,9 @@ You might even be able to consider this to be a cheat sheet.
 Nearly all of the following information can be found in [Vim's internal documentation](http://vimdoc.sourceforge.net/htmldoc/usr_41.html).
 
 You should probably already know how to program before reading this.
+
+Vim's built in documentation is excellent.  Try `:h <searchterm>` to read more inside Vim.
+You can start a REPL inside Vim by issuing the command `gQ` in normal mode if you want to play around with Vimscript.
 
 *Note:
 Examples may contain tokens resembling `<token>`.
@@ -34,6 +37,9 @@ g:var - global.
 a:var - function argument variable.
 v:var - Predefined Vim variable.
 {% endhighlight %}
+
+You can set and get environment variables by referencing the variable as `$variable`.
+Built-in vim options are also available by referencing the variable as `&option`.
 
 ## Data Types
 
@@ -61,16 +67,45 @@ v:var - Predefined Vim variable.
 {% endhighlight %}
 
 `Funcref`: A reference to a function.
+*Variables used for funcref objects must start with a capital letter.*
 
 {% highlight vim %}
-function("strlen")
+:let Myfunc = function("strlen")
+:echo Myfunc('foobar') " Call strlen on 'foobar'.
+6
 {% endhighlight %}
 
 `List`: An ordered sequence of items.
 
 {% highlight vim %}
-[1, 2, ['a', 'b']]
+:let mylist = [1, 2, ['a', 'b']]
+:echo mylist[0]
+1
+:echo mylist[2][0]
+a
+:echo mylist[-2]
+2
+:echo mylist[999]
+E684: list index out of range: 999
+:echo get(mylist, 999, "THERE IS NO 1000th ELEMENT")
+THERE IS NO 1000th ELEMENT
 {% endhighlight %}
+
+`Dictionary`: An associative, unordered array. Each entry has a key and a value.
+
+{% highlight vim %}
+:let mydict = {'blue': "#0000ff", 'foo': {999: "baz"}}
+:echo mydict["blue"]
+#0000ff
+:echo mydict.foo
+{999: "baz"}
+:echo mydict.foo.999
+baz
+:let mydict.blue = "BLUE"
+:echo mydict.blue
+BLUE
+{% endhighlight %}
+
 
 There is no `Boolean` type.
 Numeric value 0 is treated as *false*, while anything else is *true*.
@@ -78,30 +113,27 @@ Numeric value 0 is treated as *false*, while anything else is *true*.
 Strings are converted to integers before checking truthiness.
 Most strings will covert to 0, unless the string starts with a number.
 
-`Dictionary`: An associative, unordered array. Each entry has a key and a value.
-
-{% highlight vim %}
-{'blue': "#0000ff", 'red': "#ff0000"}
-{% endhighlight %}
-
 Vimscript is **dynamically** and **weakly** typed.
 
 {% highlight vim %}
->>> 1 . "foo"
+:echo 1 . "foo"
 1foo
->>> 1 + "1"
+:echo 1 + "1"
 2
 
-" Note: Complete vim expressions aren't included for
-" berevity's sake. true indicates the if condition
-" passes, false means it fails.
->>> if "foobar"
+:function! TrueFalse(arg)
+:   return a:arg? "true" : "false"
+:endfunction
+
+:echo TrueFalse("foobar")
 false
->>> if "1000"
+:echo TrueFalse("1000")
 true
->>> if "x1000"
+:echo TrueFalse("x1000")
 false
->>> if "0"
+:echo TrueFalse("1000x")
+true
+:echo TrueFalse("0")
 false
 {% endhighlight %}
 
@@ -130,11 +162,15 @@ Add `?` or `#` to the end of the operator to match based on a case or not.*
 `$<variable>`: Get the value of a system variable.
 
 {% highlight vim %}
->>> if "X start" =~ 'X$'
+:function! TrueFalse(arg)
+:   return a:arg? "true" : "false"
+:endfunction
+
+:echo TrueFalse("X start" =~ 'X$')
 false
->>> if "end X" =~ 'X$'
+:echo TrueFalse("end X" =~ 'X$')
 true
->>> if "end x" =~# 'X$'
+:echo TrueFalse("end x" =~# 'X$')
 false
 {% endhighlight %}
 
@@ -226,4 +262,29 @@ function! b:RangeSize() range
     echo a:lastline - a:firstline
 endfunction
 {% endhighlight %}
+
+## Classes
+
+Vim doesn't have classes built in, but you can get rudimentary class-like functionality by leveraging the `Dict` object.
+In order to define a method on a class, use the `dict` keyword in the function definition to expose the internal dictionary as `self`.
+
+{% highlight vim %}
+let MyClass = {foo: "Foo"}
+function MyClass.printFoo() dict
+	echo self.foo
+endfunction
+{% endhighlight %}
+
+Classes are like singletons by default.
+In order to make instances of classes in vimscript, call `copy()` on the dictionary.
+
+{% highlight vim %}
+:let myinstance = copy(MyClass)
+:call myinstance.printFoo()
+Foo
+:let myinstance.foo = "Bar"
+:call myinstance.printFoo()
+Bar
+{% endhighlight %}
+
 
