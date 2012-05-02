@@ -28,14 +28,17 @@ Vimscript does use `<` and `>` as comparison operators.*
 
 `unlet!` unsets a variable and surpresses the error if it doesn't exist.
 
-{% highlight vim %}
-" Variable scoping:
+By default, a variable is scoped globally if it is initially defined outside a function or it is local to the function it was initialized in in.
+You can explicitly scope variables by prepending a specific prefix to their name:
 
-b:var - buffer.
-w:var - window.
+{% highlight vim %}
 g:var - global.
-a:var - function argument variable.
-v:var - Predefined Vim variable.
+a:var - function argument.
+l:var - local to function.
+b:var - local to buffer.
+w:var - local to window.
+t:var - local to tab.
+v:var - Predefined by Vim.
 {% endhighlight %}
 
 You can set and get environment variables by referencing the variable as `$variable`.
@@ -51,7 +54,7 @@ Built-in vim options are also available by referencing the variable as `&option`
 0177
 {% endhighlight %}
 
-`Float`: Floating point number.
+`Float`: Floating point number. *Requires `+float` on vim compile*
 
 {% highlight vim %}
 123.456
@@ -108,7 +111,7 @@ BLUE
 
 
 There is no `Boolean` type.
-Numeric value 0 is treated as *false*, while anything else is *true*.
+Numeric value 0 is treated as *falsy*, while anything else is *truthy*.
 
 Strings are converted to integers before checking truthiness.
 Most strings will covert to 0, unless the string starts with a number.
@@ -141,7 +144,7 @@ false
 
 `<string> == <string>`: String equals.
 
-`<string> != <string>`: String equals.
+`<string> != <string>`: String does not equal.
 
 `<string> =~ <pattern>`: String matches pattern.
 
@@ -155,11 +158,8 @@ false
 Add `?` or `#` to the end of the operator to match based on a case or not.*
 
 
-`<string> . <string>`: Concatinate two strings.
+`<string> . <string>`: Concatenate two strings.
 
-`&<option>`: Get the value of a "set" style option.
-
-`$<variable>`: Get the value of a system variable.
 
 {% highlight vim %}
 :function! TrueFalse(arg)
@@ -249,9 +249,9 @@ endfunction
 
 There's a special way to call functions, and that is on a range of lines from a buffer.
 Calling a function this way looks like `1,3call Foobar()`.
-A function called with a range is executed once for every line in the range. In this case, `foobar` is called three times total.
+A function called with a range is executed once for every line in the range. In this case, `Foobar` is called three times total.
 
-If you add the keyword `range` after the argument list, the function will only be defined once.
+If you add the keyword `range` after the argument list, the function will only be called once.
 Two special variables will be available within the scope of the function: `a:firstline` and `a:lastline`.
 These variables contain the start and end line numbers for the range on the function call.
 
@@ -286,5 +286,4 @@ Foo
 :call myinstance.printFoo()
 Bar
 {% endhighlight %}
-
 
