@@ -186,11 +186,6 @@ endif
 {% endhighlight %}
 
 {% highlight vim %}
-while <expression>
-endwhile
-{% endhighlight %}
-
-{% highlight vim %}
 for <var> in <list>
 	continue
 	break
@@ -203,10 +198,15 @@ endfor
 {% endhighlight %}
 
 {% highlight vim %}
+while <expression>
+endwhile
+{% endhighlight %}
+
+{% highlight vim %}
 try
 	...
 catch <pattern (optional)>
-	...
+	" HIGHLY recommended to catch specific error.
 finally
 	...
 endtry
@@ -264,7 +264,7 @@ endfunction
 
 ## Classes
 
-Vim doesn't have classes built in, but you can get rudimentary class-like functionality by leveraging the `Dict` object.
+Vim doesn't have classes built in, but you can get rudimentary class-like functionality by leveraging the `Dictionary` object.
 In order to define a method on a class, use the `dict` keyword in the function definition to expose the internal dictionary as `self`.
 
 {% highlight vim %}
