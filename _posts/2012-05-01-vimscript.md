@@ -139,7 +139,7 @@ true
 false
 {% endhighlight %}
 
-## String Conditionals and Operators:
+## String Conditionals and Operators
 
 `<string> == <string>`: String equals.
 
