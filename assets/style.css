@@ -15,10 +15,6 @@ header {
 	margin-bottom: 20px;
 }
 
-#archive-link {
-	font-size: 10px;
-}
-
 #post-header {
 	margin-bottom: 20px;
 }
@@ -54,10 +50,19 @@ header {
 	font-size: 10px;
 }
 
+#post-body {
+	margin-bottom: 10px;
+}
+
 #post-body h1,
 #post-body h2,
 #post-body h3 {
+	padding-top: 10px;
 	margin-bottom: 10px;
+}
+
+#disqus_thread {
+	margin-top: 20px;
 }
 
 h1 { font-size: 32px; }
@@ -83,7 +88,7 @@ body {
 #post-body p {
 	margin-bottom: 10px;
 	line-height: 1.45em;
-	word-spacing: 0.3em;
+	word-spacing: 0.15em;
 }
 
 .highlight {
@@ -102,3 +107,43 @@ code {
 	font-size: 14px;
 }
 
+p code {
+	padding: .1em .3em;
+	background-color: #EEE;
+	font-weight: bold;
+}
+
+footer strong, footer b,
+p strong, p b {
+	font-weight: bold;
+}
+
+p em, p i {
+	font-style: italic;
+}
+
+hr {
+	height: 30px;
+	border: none !important;
+}
+
+footer a,
+p a {
+	color: #888;
+
+	text-decoration: none;
+	border-bottom: 1px dotted #CCC;
+	margin-right: .1em;
+}
+
+footer a:hover,
+p a:hover {
+	color: black;
+}
+
+footer {
+	line-height: 1.45em;
+
+	margin-top: 0px;
+	margin-bottom: 20px;
+}
