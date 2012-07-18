@@ -113,6 +113,17 @@ p code {
 	font-weight: bold;
 }
 
+#email-link,
+#twitter-link,
+#archive-link {
+	font-size: 1.2em;
+	margin-right: 1em;
+	background-color: #EEE;
+	color: black;
+	padding: .1em .3em;
+	border-radius: 3px;
+}
+
 footer strong, footer b,
 p strong, p b {
 	font-weight: bold;
