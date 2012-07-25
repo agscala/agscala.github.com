@@ -27,4 +27,6 @@ author:
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
 production_url : http://agscala.github.com
+open_brackets: "{{"
+close_brackets: "}}"
 
