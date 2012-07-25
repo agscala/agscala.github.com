@@ -61,6 +61,10 @@ header {
 	margin-bottom: 10px;
 }
 
+#disqus_thread {
+	margin-top: 20px;
+}
+
 h1 { font-size: 32px; }
 h2 { font-size: 24px; }
 h3 { font-size: 18px; }
@@ -116,6 +120,17 @@ p code {
 	padding: .1em .3em;
 	background-color: #EEE;
 	font-weight: bold;
+}
+
+#email-link,
+#twitter-link,
+#archive-link {
+	font-size: 1.2em;
+	margin-right: 1em;
+	background-color: #EEE;
+	color: black;
+	padding: .1em .3em;
+	border-radius: 3px;
 }
 
 footer strong, footer b,
