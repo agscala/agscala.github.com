@@ -115,6 +115,9 @@ li {
 	line-height: 1.45em;
 }
 
+#post-body pre {
+}
+
 li code,
 p code {
 	padding: .1em .3em;
