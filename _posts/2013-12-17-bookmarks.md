@@ -6,12 +6,16 @@ tags: [Lifestyle, Internet]
 published: true
 ---
 
+## An Old Tip
+
 Here's an old tip for figuring out which clothes in your wardrobe you never wear anymore:
 
 *Hang all of your clothes in the closet.  When you hang them, put the hanger in backwards with the hook facing towards you.*
 *Next time when you hang your clothes in the closet, put the hanger in the normal way.*
 *Eventually you can see which clothes you never wear because the hooks will still be backwards.*
 *[And of course, donate what you don't wear.](http://www.salvationarmyusa.org/usn/www_usn_2.nsf)*
+
+## A New Tip
 
 I think it's great advice to simplify what I own and use, so I've applied it to other things.
 
