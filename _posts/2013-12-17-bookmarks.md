@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Simplify Your Life, Hide Your Bookmarks Bar
+title: "Simplify Your Life, Hide Your Bookmarks Bar"
 category:
 tags: [Lifestyle, Internet]
 published: true
