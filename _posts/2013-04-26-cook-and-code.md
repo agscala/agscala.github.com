@@ -24,6 +24,6 @@ C&C night has made these evenings into something we could look forward to-- We k
 
 ## Something Noteworthy
 
-Last year we talked to a VC to get a little more perspective about what we were getting ourselves into.  We were both surprised when the very first question he had for us was *"What relationship do you have with your cofounder?"* It makes a lot of sense though.  I suppose that not every pair of cofounders working on something have the sort of relationship to be able to pull something like Cook & Code nights off constantly.
+Last year we talked to a VC to get a little more perspective about what we were getting ourselves into.  We were both surprised when the very first question he had for us was *"What relationship do you have with your cofounder?"* It makes a lot of sense though.  I suppose that not every pair of cofounders working on something have the sort of relationship to be able to pull something like Cook & Code nights off consistantly.
 
 Have you ever found yourself in a similar situation? What have you done to overcome lack of motivation?
